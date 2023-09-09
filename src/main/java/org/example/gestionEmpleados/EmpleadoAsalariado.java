@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gestionEmpleados;
 
 public class EmpleadoAsalariado extends Empleado {
 
@@ -6,13 +6,17 @@ public class EmpleadoAsalariado extends Empleado {
 		super(nombre, String.valueOf(salarioBase));
 	}
 
-	// Completa este método para calcular el salario del empleado asalariado
-	public boolean calcularSalario() {
 
-		return false;
+	public boolean calcularSalario() {
+			return false;
 	}
+
 
 	public String getTipo() {
 		return "Asalariado";
+	}
+
+	public String toString() {
+		return "Nombre: " + nombre +", Salario Base: " + salarioBase;
 	}
 }
