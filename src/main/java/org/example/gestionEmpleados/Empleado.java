@@ -1,12 +1,10 @@
 package org.example.gestionEmpleados;
 
-import com.sun.tools.javac.Main;
-
 public abstract class Empleado {
 	protected String nombre;
 	protected String salarioBase;
 
-	public Empleado(String nombre, double salarioPorHora, int horasTrabajadas) {
+	public Empleado(String nombre, double salarioPorHora) {
 	}
 
 	public String getNombre() {

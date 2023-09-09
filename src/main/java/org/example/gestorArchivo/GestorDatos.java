@@ -32,12 +32,18 @@ public class GestorDatos {
         try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
             while ((linea = reader.readLine()) != null) {
-                // Suponiendo que cada línea contiene información para crear un empleado
-                // Debes analizar y dividir la línea según el formato de tus datos.
-                // Por ejemplo, si estás guardando los datos en formato CSV:
-                // String[] partes = linea.split(",");
-                // Luego, crea el empleado y agrégalo a la lista.
-                // empleados.add(new Empleado(partes[0], Double.parseDouble(partes[1])));
+                String[] partes = linea.split(",");
+                empleados.add(new Empleado(partes[0], Double.parseDouble(partes[1])) {
+                    @Override
+                    public String getTipo() {
+                        return null;
+                    }
+
+                    @Override
+                    public boolean calcularSalario() {
+                        return false;
+                    }
+                });
             }
         } catch (IOException e) {
             System.err.println("Error al leer el archivo " + nombreArchivo);
@@ -46,4 +52,5 @@ public class GestorDatos {
 
         return empleados;
     }
+
 }
